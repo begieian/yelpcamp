@@ -7,7 +7,6 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express');
 const app = express();
-const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -179,7 +178,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 })
